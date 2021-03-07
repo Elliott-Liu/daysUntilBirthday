@@ -3,6 +3,7 @@
 - Forked from lwitzani's original [daysUntilBirthday](https://github.com/lwitzani/daysUntilBirthday), adapted for small widget with some additional colour, font options.
 - Up to 8 people of your contacts are shown simultaneously, displaying how many days are left until their Birthday.
 - Contacts are sorted by how far away their birthday is (nearest first).
+
 ![](fullySetupWidget.png)
 
 ## How to Use

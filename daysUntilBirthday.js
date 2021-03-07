@@ -7,24 +7,24 @@
 // --------------------------------
 //
 // # HOW TO USE
-// ## MODE 1 (DEFAULT): ONLY CHOSEN CONTACTS:
-// - In your contacts app, edit the contacts you want to be visible in this widget.
-// - You need to set up an additional 'date' field in your contact and give the date the label 'daysUntilBirthday' (change the 'contactNotesKeyWord' if desired).
-// - Run the script initially in the Scriptable app to create a .json file in iCloud containing contact information for faster access.
-// - When you add new contacts via the label, run the script again in the app to update the .json and make the changes visible in iCloud-mode.
-// - When setting the script up as Widget, use the smallest presentation mode and provide the parameter 'iCloud' (without the '').
-//
+// ## Mode 1 (Default): Chosen Contacts Only:
+// In the iOS Contacts app, edit the contacts you want to be visible in this widget. To do this:
+// 1. You need to set up an additional 'date' field in your contact and give the date the label '**daysUntilBirthday**'.
+// 2. Run the script initially in the Scriptable app to create a .json file in iCloud containing contact information for faster access.
+// 3. When you add new contacts via the label, run the script again in the app to update the .json! This makes the changes visible in *iCloud Mode*.
+// 4. When setting the script up as **widget**, use the ***smallest presentation mode*** and ***provide the parameter 'iCloud'*** (without the ' ').
+// 
 // The name of the label you need to set in contacts on the first date field:
 const contactNotesKeyWord = 'daysUntilBirthday';
 //
-// ## MODE 2: SHOW ALL CONTACTS WITH A BIRTHDAY CONFIGURED:
-// - Set the next variable to 'true' or provide the parameter 'showAll' in widget mode to show all contacts that have a birthday in the regular birthday field configured.
+// ## Mode 2: Show All Contacts with a Birthday Configured
+// - Set the variable '**showAllContacts**' to '*true*' or provide the parameter '*showAll*' in widget mode to show all contacts that have a birthday in the regular birthday field configured.
 let showAllContacts = true;
 //
-// ## iCloud MODE:
-// - Set the next variable to 'true' or provide the parameter 'iCloud' in widget mode to never recalculate which contacts are shown again.
-// - If false -> everytime the contacts are scanned.
-// - If true -> contacts are not scanned and last used contacts are used again.
+// ## iCloud Mode
+// - Set the variable '**useIcloud**' to true or provide the parameter '*iCloud*' in widget mode to never recalculate which contacts are shown again.
+//   - If false -> everytime the contacts are scanned.
+//   - If true -> contacts are not scanned and last used contacts are used again.
 let useIcloud = false;
 //
 // --------------------------------
@@ -37,13 +37,6 @@ let useIcloud = false;
 const daysUntilBirthdayText = 'UPCOMING BIRTHDAYS';
 const daysText = 'Days';
 const todayText = 'Today';
-//
-// DATE FORMAT
-birthdayDateFormat = 1; // 1 = DAYS UNTIL, 2 = DATE ONLY, 3 = DAYS UNTIL + DATE
-const dateFormatter = new DateFormatter();
-dateFormatter.dateFormat = 'dd-MM-yyyy';
-const timeFormatter = new DateFormatter();
-timeFormatter.dateFormat = 'dd-MM-yyyy HH:mm:ss';
 //
 // HEADER FORMAT
 const headerFont = new Font('Menlo-bold', 11);
@@ -69,10 +62,17 @@ const backgroundColor = new Color("#222222");
 const contactsToShow = 7;
 //
 // NUMBER OF LINE SPACES
-const contactLineSpace = 3;
+const lineSpace = 3;
 //
 // USED FOR INSERTING SPACE CHARACTERS
 const lineLength = 9;
+//
+// DATE FORMAT
+birthdayDateFormat = 1; // 1 = DAYS UNTIL, 2 = DATE ONLY, 3 = DAYS UNTIL + DATE
+const dateFormatter = new DateFormatter();
+dateFormatter.dateFormat = 'dd-MM-yyyy';
+const timeFormatter = new DateFormatter();
+timeFormatter.dateFormat = 'dd-MM-yyyy HH:mm:ss';
 //
 ///////////////////////////////////
 
@@ -116,7 +116,7 @@ async function createWidget() {
     let headerText = headerRow.addText(daysUntilBirthdayText);
     headerText.textColor = headerColor;
     headerText.font = headerFont;
-    widget.addSpacer(contactLineSpace);
+    widget.addSpacer(lineSpace);
 
     let shownCustomContacts = [];
     let dataSource = '';
@@ -199,7 +199,7 @@ async function createWidget() {
         addContactInfoToRow(customContact, currentRow);
         contactCounter++;
         if (contactCounter < 20) {
-            widget.addSpacer(contactLineSpace);
+            widget.addSpacer(lineSpace);
         }
     }
 

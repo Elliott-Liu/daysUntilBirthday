@@ -1,6 +1,6 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
-// icon-colour: red; icon-glyph: birthday-cake;
+// icon-color: red; icon-glyph: birthday-cake;
 
 // --------------------------------
 //       UPCOMING BIRTHDAYS
@@ -47,23 +47,23 @@ timeFormatter.dateFormat = 'dd-MM-yyyy HH:mm:ss';
 //
 // HEADER FORMAT
 const headerFont = new Font('Menlo-bold', 11);
-const headerColour = new Colour("#FFC414");
+const headerColor = new Color("#FFC414");
 //
 // CONTACT NAME FORMAT
 const contactNameFont = new Font('Menlo-bold', 11);
-const contactNameColour = new Colour("#FFFFFF");
+const contactNameColor = new Color("#FFFFFF");
 //
 // CONTACT BIRTHDAY FORMAT
 const birthdayDateFont = new Font('Menlo-regular', 11);
-const birthdayDateColour = new Colour("#FFFFFF");
-const birthdayTodayColour = new Colour("#FFC414");
+const birthdayDateColor = new Color("#FFFFFF");
+const birthdayTodayColor = new Color("#FFC414");
 //
 // UPDATED INFO FORMAT
 const updatedAtFont = new Font('Menlo-boldItalic', 6);
-const updatedAtColour = new Colour("#918A8A");
+const updatedAtColor = new Color("#918A8A");
 //
 // BACKGROUND COLOUR
-const backgroundColour = new Colour("#222222");
+const backgroundColor = new Color("#222222");
 //
 // NUMBER OF CONTACTS TO DISPLAY
 const contactsToShow = 7;
@@ -91,7 +91,7 @@ class CustomContact {
 }
 
 const widget = await createWidget();
-widget.backgroundColour = backgroundColour;
+widget.backgroundColor = backgroundColor;
 if (!config.runsInWidget) {
     await widget.presentSmall();
 }
@@ -114,7 +114,7 @@ async function createWidget() {
     const widget = new ListWidget();
     let headerRow = widget.addStack();
     let headerText = headerRow.addText(daysUntilBirthdayText);
-    headerText.textColour = headerColour;
+    headerText.textColor = headerColor;
     headerText.font = headerFont;
     widget.addSpacer(contactLineSpace);
 
@@ -205,7 +205,7 @@ async function createWidget() {
 
     let updatedAt = widget.addText(dataSource + ', ' + timeFormatter.string(new Date()));
     updatedAt.font = updatedAtFont;
-    updatedAt.textColour = updatedAtColour;
+    updatedAt.textColor = updatedAtColor;
     updatedAt.centerAlignText();
     return widget;
 }
@@ -223,7 +223,7 @@ function addContactInfoToRow(customContact, row) {
     addSpaces(lineLength - customContact.name.length, row);
     let nameRow = row.addText(customContact.name);
     nameRow.font = contactNameFont;
-    nameRow.textColour = contactNameColour;
+    nameRow.textColor = contactNameColor;
     let actualFullBirthday = customContact.daysUntil === 0 ? ' ' + todayText + '\n ' + customContact.date.replace('.2222', '.????') : ' ' + customContact.daysUntil + ' ' + daysText + '\n ' + customContact.date.replace('.2222', '.????');
     let actualBirthdayDate = ' ' + customContact.date.replace('.2222', '.????');
     let actualBirthdayDaysUntil = customContact.daysUntil === 0 ? ' ' + todayText : ' ' + customContact.daysUntil + ' ' + daysText;
@@ -237,9 +237,9 @@ function addContactInfoToRow(customContact, row) {
     let daysInfoText = row.addText(actualDate);
     daysInfoText.font = birthdayDateFont;
     if (actualBirthdayDaysUntil.includes(todayText)) {
-        daysInfoText.textColour = birthdayTodayColour;
+        daysInfoText.textColor = birthdayTodayColor;
     } else {
-        daysInfoText.textColour = birthdayDateColour;
+        daysInfoText.textColor = birthdayDateColor;
     }
 }
 

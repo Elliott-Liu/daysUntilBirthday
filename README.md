@@ -1,4 +1,4 @@
-# SCRIPTABLE SCRIPT: daysUntilBirthday
+# SCRIPTABLE SCRIPT: daysUntilBirthdaySmall
 - Script for the iOS App Scriptable.
 - Forked from lwitzani's original [daysUntilBirthday](https://github.com/lwitzani/daysUntilBirthday), adapted for small widget with some additional colour, font options.
 - Up to 8 people of your contacts are shown simultaneously, displaying how many days are left until their Birthday.

@@ -4,8 +4,6 @@
 - Up to 8 people of your contacts are shown simultaneously, displaying how many days are left until their Birthday.
 - Contacts are sorted by how far away their birthday is (nearest first).
 
-![](fullySetupWidget.png)
-
 ## How to Use
 ### Mode 1 (Default): Chosen Contacts Only
 In the iOS Contacts app, edit the contacts you want to be visible in this widget. To do this:
@@ -30,6 +28,7 @@ In the iOS Contacts app, edit the contacts you want to be visible in this widget
 - When using parameter '*iCloud*' the contacts are not scanned and the source at the bottom changes to '*iCloud*'.
 - When using parameter '*showAll*' (without using parameter '*iCloud*') all contacts with birthdays are shown.
 - *Note*, if the last configuration was empty and next one is '*iCloud,showAll*' then because of *iCloud Mode* (all previous found contacts are used again) the '*showAll*' parameter will not have any effect, since the default mode is *Mode 1* (only show selected contacts).
+
 ![](setupWidget.gif)
 
 ## Configuration Settings
@@ -46,3 +45,5 @@ In the iOS Contacts app, edit the contacts you want to be visible in this widget
 - '**lineSpace**' dictates how much padding there is between the text rows. Default is *3*.
 - '**lineLength**' dictates the padding on the left side of the widget. Default is *9*.
 - ***Advanced***, it is possible to display the *date* of the Birthday instead of the *days until* by changing the '**birthdayDateFormat**' from *1* to *2*. In doing this the default formatting will look a little weird and you'll need to adjust the '**lineLength**' parameter to a value of 7 to get things centered again.
+
+![](fullySetupWidget.png)

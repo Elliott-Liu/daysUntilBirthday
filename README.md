@@ -37,7 +37,7 @@ In the iOS Contacts app, edit the contacts you want to be visible in this widget
 - You can easily edit the parameter at the top of the script to show the text you like.
 - Example is in English.
 
-### Text Formatting
+### Formatting
 - Text formatting options are available and can be changed in the **SETTINGS** section of the script.
 	- The default font is 'Menlo-regular', and 'Menlo-bold'. More font options are available [here](http://iosfonts.com); it is recommended to use a mono-space font such as 'Courier', or 'Courier New'.
 	- The default font size for the text is 11, with the exception of the **updated info** which is size 6.

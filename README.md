@@ -13,7 +13,7 @@ In the iOS Contacts app, edit the contacts you want to be visible in this widget
 4. When setting the script up as **widget**, use the ***smallest presentation mode*** and ***provide the parameter 'iCloud'*** (without the ' ').
 - If contacts have a nickname set, the nickname will be chosen.
 - If the name contains a space character, only the part before the first space is used (in case of a nickname like 'Julian ❤️' the name in this widget will be 'Julian').
-![](contactSetup.gif)
+- ![](contactSetup.gif)
 
 ### Mode 2: Show All Contacts with a Birthday Configured
 - Set the variable '**showAllContacts**' to '*true*' or provide the parameter '*showAll*' in widget mode to show all contacts that have a birthday in the regular birthday field configured.
